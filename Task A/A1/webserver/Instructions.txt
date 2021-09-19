@@ -1,0 +1,6 @@
+Steps to use: 
+  1. Run the dockerfile using "docker build -t tanweijie123/my-static-web ."
+  2. Run "docker images" and ensure that "my-static-web" is there.
+  3. Run the command "docker run -d -p 9999:80 tanweijie123/my-static-web" to launch the webserver. 
+  4. Open the web browser and check that it is working on "http://localhost:9999/
+
