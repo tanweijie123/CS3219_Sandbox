@@ -1,0 +1,13 @@
+Steps to run webserver + reverse proxy
+
+Steps: 
+  1. Run "docker-compose up -d" to allow docker to create a network between the 2 dockers (webserver and reverse_proxy).
+       When this is running, the following will happen: 
+           a. Perform a docker build in ./webserver and name it as my-static-web. 
+           b. Pull nginx:alpine from docker library and map the .conf into reverse proxy docker
+
+  2. Check that to directly access my-static-web, you have to use port 9999. Using port 80 will not work
+
+  3. Using the reverse proxy, we can access my-static-web via http://localhost/web . This will utilise the 
+     reverse proxy mapping and not directly access my-static-web. 
+

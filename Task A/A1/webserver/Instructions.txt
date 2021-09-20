@@ -1,6 +1,8 @@
+Instructions for using my-static-web only. 
+
 Steps to use: 
-  1. Run the dockerfile using "docker build -t tanweijie123/my-static-web ."
+  1. Run the dockerfile using "docker build -t my-static-web ."
   2. Run "docker images" and ensure that "my-static-web" is there.
-  3. Run the command "docker run -d -p 9999:80 tanweijie123/my-static-web" to launch the webserver. 
+  3. Run the command "docker run -d -p 9999:80 my-static-web" to run the docker and using the port 9999 to access. 
   4. Open the web browser and check that it is working on "http://localhost:9999/
 
