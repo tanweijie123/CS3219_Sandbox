@@ -1,0 +1,22 @@
+version: '3'
+
+services: 
+
+  reverse-proxy: 
+    image: nginx:alpine
+    container_name: reverse_proxy
+    depends_on:
+        - my-static-web
+    volumes: 
+      - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80" #localhost to use port 80 to access
+      
+  
+  my-static-web:
+    image: my-static-web
+    container_name: my_static_web
+    build:
+      context: ./webserver
+    ports:
+      - "9999:80"  #localhost to use 9999 port for access
