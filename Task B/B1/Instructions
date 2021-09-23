@@ -1,0 +1,26 @@
+Prior Installations (if required): 
+   - node
+   - npm
+   - mongo
+   
+To get the node_modules dependencies
+   - run "npm init" 
+   - run "npm install express --save" 
+   - run "npm install mongoose --save"
+   - run "npm install body-parser --save" 
+   
+To start the project: 
+   - run "mangod" 
+   - run "node index" in RESTProj/
+      or run "sudo npm install -g nodemon" & "nodemon index" for auto refresh during work
+      
+      
+      
+      
+-----
+
+Potential problems encountered: 
+1. The latest mongoose version is not compatible with latest npm. (ie. use lower version mongoose)
+   npm i mongoose@5.8.5
+
+2. 
