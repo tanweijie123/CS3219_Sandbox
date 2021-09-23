@@ -19,19 +19,22 @@ exports.index = function (req, res) {
 };
 // Handle create contact actions
 exports.new = function (req, res) {
-    var site = new Password();
-    site.name = req.body.name;
-    site.id = req.body.id;
-    site.pw = req.body.pw;
-
-    Password.findOne({"name": site.name}, function (err, site) {
+    if (!req.body.name || !req.body.id || !req.body.pw) {
+        res.send("name, id, pw are required.");
+        return;
+    }
+    Password.findOne({"name": req.body.name}, function (err, site) {
         if (site) {
             res.send("Site name already exist. Use another name for this site."); 
         } else {
+            site = new Password();
+            site.name = req.body.name;
+            site.id = req.body.id;
+            site.pw = req.body.pw;
             // save and check for errors
             site.save(function (err) {
-                // if (err)
-                //     res.json(err);
+                if (err)
+                    res.json(err);
             res.json({
                     message: 'New site created!',
                     data: site
@@ -46,14 +49,25 @@ exports.view = function (req, res) {
     Password.find({"name": req.params.site},  function (err, site) {
         if (err)
             res.send(err);
-        res.json({
-            message: 'Site details loading..',
-            data: site
-        });
+        if (site.length) {
+            res.json({
+                message: 'Site details found...',
+                data: site
+            });
+        } else {
+            res.json({
+                message: 'Site details not found...',
+                data: site
+            });
+        }
     });
 };
 // Handle update contact info
 exports.update = function (req, res) {
+    if (!req.body.name || !req.body.id || !req.body.pw) {
+        res.send("name, id, pw are required.");
+        return;
+    }
     Password.findOne({"name": req.params.site}, function (err, site) {
         if (err)
             res.send(err);
