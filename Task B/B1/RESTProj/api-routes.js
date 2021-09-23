@@ -9,15 +9,15 @@ router.get('/', function (req, res) {
     });
 });
 // Import contact controller
-var contactController = require('./contactController');
+var pwController = require('./pwController');
 // Contact routes
-router.route('/contacts')
-    .get(contactController.index)
-    .post(contactController.new);
-router.route('/contacts/:contact_id')
-    .get(contactController.view)
-    .patch(contactController.update)
-    .put(contactController.update)
-    .delete(contactController.delete);
+router.route('/book')
+    .get(pwController.index)
+    .post(pwController.new);
+router.route('/book/:site')
+    .get(pwController.view)
+    .patch(pwController.update)
+    .put(pwController.update)
+    .delete(pwController.delete);
 // Export API routes
 module.exports = router;

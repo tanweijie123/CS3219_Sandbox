@@ -1,24 +1,26 @@
 // contactModel.js
 var mongoose = require('mongoose');
 // Setup schema
-var contactSchema = mongoose.Schema({
+var pwSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    email: {
+    id: {
         type: String,
         required: true
     },
-    gender: String,
-    phone: String,
+    pw: {
+        type: String,
+        required: true
+    },
     create_date: {
         type: Date,
         default: Date.now
     }
 });
 // Export Contact model
-var Contact = module.exports = mongoose.model('contact', contactSchema);
+var schema = module.exports = mongoose.model('password', pwSchema);
 module.exports.get = function (callback, limit) {
-    Contact.find(callback).limit(limit);
+    schema.find(callback).limit(limit);
 }
