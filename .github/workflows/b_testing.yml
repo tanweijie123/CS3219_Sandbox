@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         cache: 'npm'
-      run: |
+    - run: |
         cd ${{env.working-directory}}/
         npm install
         npm test
