@@ -18,12 +18,10 @@ jobs:
     - name: Check Path
       run: echo ${{env.working-directory}}
 
-    - name: Configure Node.js
+    - name: Configure Node.js and run
       uses: actions/setup-node@v2
       with:
         cache: 'npm'
-        
-    - name: Run Test
       run: |
         cd ${{env.working-directory}}/
         npm install
