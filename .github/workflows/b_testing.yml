@@ -12,24 +12,6 @@ env:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
-    
-    container: node:10.18-jessie
-    services:
-      mongodb:
-        image: mongo:3.6.8
-        env:
-          MONGO_INITDB_ROOT_USERNAME: test
-          MONGO_INITDB_ROOT_PASSWORD: password
-          MONGO_INITDB_DATABASE: test
-        ports:
-          - 27017:27017
-        options: >-
-          --health-cmd mongo
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-
           
     steps:
     - uses: actions/checkout@v2
@@ -39,6 +21,9 @@ jobs:
       
     - name: Configure Node.js and run
       uses: actions/setup-node@v2
+      
+    - name: Start Docker for Mongodb
+      run: docker run -d -p 27017:27017 mongo
         
     - run: npm ci 
       working-directory:  ${{env.working-directory}}/
