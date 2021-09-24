@@ -20,8 +20,6 @@ jobs:
 
     - name: Configure Node.js and run
       uses: actions/setup-node@v2
-      with:
-        cache: 'npm'
         
     - run: npm ci 
       working-directory:  ${{env.working-directory}}/
