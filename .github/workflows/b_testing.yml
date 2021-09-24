@@ -12,17 +12,20 @@ env:
 jobs:
   build_and_test:
     runs-on: self-hosted
+    
+    container: node:10.18-jessie
+    services:
+      mongodb:
+        image: mongo:3.6.8
+        ports:
+          - 27017:27017
+          
     steps:
     - uses: actions/checkout@v2
     
     - name: Check Path
       run: echo ${{env.working-directory}}
       
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.6.0
-      with:
-        mongodb-version: 4.2
-
     - name: Configure Node.js and run
       uses: actions/setup-node@v2
         
