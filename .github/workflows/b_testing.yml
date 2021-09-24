@@ -30,9 +30,9 @@ jobs:
       uses: actions/setup-node@v2
         
     - run: npm ci 
-      working-directory:  ${{env.working-directory}}/
+      working-directory:  "${{env.working-directory}}/"
       
     - run: npm test
-      working-directory:  ${{env.working-directory}}/
+      working-directory:  "${{env.working-directory}}/"
 
 
