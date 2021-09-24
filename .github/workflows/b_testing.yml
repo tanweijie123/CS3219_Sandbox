@@ -23,6 +23,9 @@ jobs:
       with:
         cache: 'npm'
         
+    - run: npm ci 
+      working-directory:  ${{env.working-directory}}/
+      
     - run: npm install
       working-directory:  ${{env.working-directory}}/
       
