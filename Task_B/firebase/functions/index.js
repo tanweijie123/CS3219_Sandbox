@@ -4,21 +4,42 @@ admin.initializeApp();
 
 const express = require('express'); 
 const cors = require('cors'); 
-
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const app = express(); 
+
+const apiRoutes = require('./api-routes'); 
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
+
+app.use(bodyParser.json()); 
+
+mongoose.connect('mongodb://rest:restpassw0rd@149.28.159.224/restproj', { useUnifiedTopology: true});
+var db = mongoose.connection;
+
+// Added check for DB connection
+if(!db)
+    console.log("Error connecting db");
+else
+    console.log("Db connected successfully");
+
+
 app.use(cors({ origin: true})); 
 
 app.get('/', (req, res) => {
     res.status(200).send('Running on Google Functions'); 
 }); 
 
-app.get("/test", function (req, res) {
-    return res.sendStatus(200).send('a');
-})
-
-app.get("/stripe-event", function (req, res) {
-    //Do the processing
-    return res.sendStatus(200).send('b');
-})
+// Use Api routes in the App
+app.use('/api', apiRoutes);
 
 exports.api = functions.https.onRequest(app); 
+
+/* REMOVAL BECAUSE DEPLOYED ON GOOGLE FUNCTIONS
+var port = process.env.PORT || 8080;
+var server = app.listen(port, function () {
+    console.log("Running RestHub on port " + port);
+});
+module.exports = server
+*/
