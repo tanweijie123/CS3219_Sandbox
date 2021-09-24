@@ -20,6 +20,8 @@ jobs:
       
     - name: Start MongoDB
       uses: supercharge/mongodb-github-action@1.6.0
+      with:
+        mongodb-version: 4.2
 
     - name: Configure Node.js and run
       uses: actions/setup-node@v2
