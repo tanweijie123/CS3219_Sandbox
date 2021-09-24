@@ -17,13 +17,19 @@ jobs:
     services:
       mongodb:
         image: mongo:3.6.8
+        env:
+          MONGO_INITDB_ROOT_USERNAME: test
+          MONGO_INITDB_ROOT_PASSWORD: password
+          MONGO_INITDB_DATABASE: test
         ports:
           - 27017:27017
         options: >-
-          --health-cmd pg_isready
+          --health-cmd mongo
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
+
           
     steps:
     - uses: actions/checkout@v2
