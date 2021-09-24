@@ -7,7 +7,17 @@ To get the node_modules dependencies
    - run "npm init" 
    - run "npm install express --save" 
    - run "npm install mongoose --save"
-   - run "npm install body-parser --save" 
+   - run "npm install body-parser --save"
+   - run "npm install --save-dev mocha" 
+   - run "npm install --save-dev chai"
+   - run "npm install @babel/preset-env --save-dev"
+   - run "npm install --save-dev @babel/register" 
+   - run "npm install --save-dev @babel/core" 
+   - run "npm install --save-dev babel-loader@^7"
+   - run "npm install chai-http"
+   
+   "rm -rf node_modules package-lock.json" //to delete all depedencies and rebuilt
+   "npm install" 
    
 To start the project: 
    - run "mangod" 

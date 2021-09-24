@@ -4,13 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require @babel/register test.js --exit"
   },
   "author": "WeiJie",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
     "express": "^4.17.1",
     "mongoose": "^5.8.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
+    "babel-loader": "^7.1.5",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1"
   }
 }

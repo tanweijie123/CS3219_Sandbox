@@ -1,5 +1,5 @@
 // Import pwManager 
-Password = require('./pwManager');
+var Password = require('./pwManager');
 
 // Handle index actions
 exports.index = function (req, res) {
@@ -10,7 +10,7 @@ exports.index = function (req, res) {
                 message: err,
             });
         }
-        res.json({
+        res.status(200).json({
             status: "success",
             message: "Book retrieved successfully",
             data: book
@@ -35,7 +35,7 @@ exports.new = function (req, res) {
             site.save(function (err) {
                 if (err)
                     res.json(err);
-            res.json({
+            res.status(200).json({
                     message: 'New site created!',
                     data: site
                 });
@@ -50,12 +50,12 @@ exports.view = function (req, res) {
         if (err)
             res.send(err);
         if (site.length) {
-            res.json({
+            res.status(200).json({
                 message: 'Site details found...',
                 data: site
             });
         } else {
-            res.json({
+            res.status(404).json({
                 message: 'Site details not found...',
                 data: site
             });
@@ -73,7 +73,7 @@ exports.update = function (req, res) {
             res.send(err);
         
         if (!site) {
-            res.send("No result found."); 
+            res.status(404).send("No result found."); 
         } else {
             site.name = req.body.name;
             site.id = req.body.id;
@@ -82,7 +82,7 @@ exports.update = function (req, res) {
             site.save(function (err) {
             if (err)
                 res.json(err);
-            res.json({
+            res.status(200).json({
                 message: site.name + ' Info updated',
                 data: site
                 });
@@ -94,12 +94,12 @@ exports.update = function (req, res) {
 
 // Handle delete site
 exports.delete = function (req, res) {
-    Password.remove({
+    Password.deleteOne({
         "name": req.params.site
     }, function (err, site) {
         if (err)
             res.send(err);
-res.json({
+res.status(200).json({
             status: "success",
             message: site.deletedCount + ' Site deleted',
             data: site
