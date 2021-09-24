@@ -1,0 +1,35 @@
+name: b_testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  working-directory: ${{github.workspace}}/Task_B/RESTProj
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+          
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Check Path
+      run: echo ${{env.working-directory}}
+      
+    - name: Configure Node.js and run
+      uses: actions/setup-node@v2
+      
+    - name: Start Docker for Mongodb
+      run: docker run -d -p 27017:27017 mongo
+        
+    - run: npm ci 
+      working-directory:  ${{env.working-directory}}/
+      
+    - run: npm test
+      working-directory:  ${{env.working-directory}}/
+      env:
+        MONGODB_HOST: mongo
+        MONGODB_PORT: 27017

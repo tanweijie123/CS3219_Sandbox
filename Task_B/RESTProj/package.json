@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register test.js --exit"
+    "test": "mocha --require @babel/register test.js  --timeout 10000 --exit"
   },
   "author": "WeiJie",
   "license": "ISC",
