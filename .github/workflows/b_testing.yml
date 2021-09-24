@@ -26,6 +26,9 @@ jobs:
     - name: Check Path
       run: echo ${{env.working-directory}}
       
+    - name: Run mongodb
+      run: mongod
+      
     - name: Configure Node.js and run
       uses: actions/setup-node@v2
         
