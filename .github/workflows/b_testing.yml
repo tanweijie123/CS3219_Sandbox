@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  working-directory: ${{github.workspace}}/Task B/B1/RESTProj
+  working-directory: ${{github.workspace}}/Task_B/RESTProj
 
 jobs:
   build_and_test:
@@ -30,9 +30,9 @@ jobs:
       uses: actions/setup-node@v2
         
     - run: npm ci 
-      working-directory:  "${{env.working-directory}}/"
+      working-directory:  ${{env.working-directory}}/
       
     - run: npm test
-      working-directory:  "${{env.working-directory}}/"
+      working-directory:  ${{env.working-directory}}/
 
 
