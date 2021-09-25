@@ -28,18 +28,14 @@ else
 app.use(cors({ origin: true})); 
 
 app.get('/', (req, res) => {
-    res.status(200).send('Index - Google Functions'); 
+    res.status(200).send('Index2 - Using Server Port 8080'); 
 }); 
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 
-exports.api = functions.https.onRequest(app); 
-
-/* REMOVAL BECAUSE DEPLOYED ON GOOGLE FUNCTIONS
 var port = process.env.PORT || 8080;
 var server = app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
 module.exports = server
-*/

@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  working-directory: ${{github.workspace}}/Task_B/RESTProj
+  working-directory: ${{github.workspace}}/Task_B/firebase/functions
 
 jobs:
   build_and_test:
