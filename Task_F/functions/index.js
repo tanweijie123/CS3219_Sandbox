@@ -28,7 +28,7 @@ else
 app.use(cors({ origin: true})); 
 
 app.get('/', (req, res) => {
-    res.status(200).send('Running on Google Functions'); 
+    res.status(200).send('Task F - redis version'); 
 }); 
 
 // Use Api routes in the App
@@ -37,7 +37,7 @@ app.use('/api', apiRoutes);
 // FOR GOOGLE FUNCTION USE. 
 //exports.api = functions.https.onRequest(app); 
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8081;
 var server = app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
