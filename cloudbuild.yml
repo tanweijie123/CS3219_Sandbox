@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - api
+  - --region=asia-southeast1
+  - --source=./Task_B/firebase/
+  - --trigger-http
+  - --runtime=nodejs14
