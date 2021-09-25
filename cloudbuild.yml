@@ -6,6 +6,6 @@ steps:
   - deploy
   - api
   - --region=asia-southeast1
-  - --source=./Task_B/firebase/
+  - --source=./Task_B/firebase/functions/
   - --trigger-http
   - --runtime=nodejs14
