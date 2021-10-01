@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Delete extends Component {
     constructor(props) {
@@ -36,7 +38,7 @@ class Delete extends Component {
                         <br/><br/><br/>
                     </div>
                     <div>
-                        <button type='submit'>Delete</button>
+                        <Button type='submit'>Delete</Button>
                     </div>
                 </form>
             </div>

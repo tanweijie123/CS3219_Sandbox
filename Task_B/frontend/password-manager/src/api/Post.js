@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Post extends Component {
     constructor(props) {
@@ -44,7 +46,7 @@ class Post extends Component {
                         <br/>
                     </div>
                     <div>
-                        <button type='submit'>Insert</button>
+                        <Button type='submit'>Insert</Button>
                     </div>
                 </form>
             </div>

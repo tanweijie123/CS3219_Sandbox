@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Put extends Component {
     constructor(props) {
@@ -44,7 +46,7 @@ class Put extends Component {
                         <br/>
                     </div>
                     <div>
-                        <button type='submit'>Edit</button>
+                        <Button type='submit'>Edit</Button>
                     </div>
                 </form>
             </div>
