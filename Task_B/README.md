@@ -6,7 +6,7 @@ Backend Link: http://tanwj.link:8080/api/book
 Frontend Link: http://tanwj.link:3000/  
 Autodeployment Link: https://asia-southeast1-cs3219b.cloudfunctions.net/api/api/book  
 
-*Note: All of the data use the same database at tanwj.link:27017*  
+*Note: All of the links above uses the same database at tanwj.link:27017*  
 
 # Overview 
 This project is about creating a password manager using React App for frontend, REST API for backend CRUD operations, and MongoDB for data storage.  
@@ -42,7 +42,7 @@ In this system, website names are the "primary key". In this example, we try to 
 
 2. Trying to access unavailable website.  
   
-In the `/DELETE to delete a website`, we had deleted `WritingReadMe` website, so if we were to access it again, it will reply with a status 404 with a message "Site details not found..."  
+In the [`/DELETE to delete a website`](#delete-to-delete-a-website) section, we had deleted `WritingReadMe` website, so if we were to access it again, it will reply with a status 404 with a message "Site details not found..."  
 ![ERR_2](docs/1_1_error2.png)  
 
 3. Trying to insert / update without full details. 
@@ -53,7 +53,7 @@ In this system, we require website name, id and password to be filled. If there 
 
 4. Trying to delete non-existent website.  
   
-Since website name are unique, there are only 1 or 0 entry with such website name. As such, when trying to delete a non-existent website, it will return success with deleteCount: 0. Note that this message is different from the `/DELETE to delete a website` step.  
+Since website name are unique, there are only 1 or 0 entry with such website name. As such, when trying to delete a non-existent website, it will return success with deleteCount: 0. Note that this message is different from the [`/DELETE to delete a website`](#delete-to-delete-a-website) section.  
 ![ERR_4](docs/1_1_error4.png)  
 
 ## Task B2: Testing using CI
