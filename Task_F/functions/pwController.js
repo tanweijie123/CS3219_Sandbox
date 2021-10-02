@@ -4,6 +4,11 @@ var Password = require('./pwManager');
 const redis = require('redis');
 const redisClient = redis.createClient(); 
 
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
+
 // Handle index actions
 exports.index = function (req, res) {
     redisClient.get('book', (err, book) => {
@@ -15,6 +20,7 @@ exports.index = function (req, res) {
                 data: JSON.parse(book)
             });
         } else {
+            sleep(2000); // assume fetching data for 2s 
             Password.get(function (err, book) {
                 if (err) {
                     res.json({
