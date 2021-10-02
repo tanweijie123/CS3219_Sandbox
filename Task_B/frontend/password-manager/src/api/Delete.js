@@ -22,6 +22,7 @@ class Delete extends Component {
         e.preventDefault()
         axios.delete('http://tanwj.link:8080/api/book/' + this.state.name)
         .then(res => {
+            window.location.reload();
             console.log(res)
         })
     }

@@ -24,6 +24,7 @@ class Put extends Component {
         e.preventDefault()
         axios.put('http://tanwj.link:8080/api/book/' + this.state.name, this.state)
         .then(res => {
+            window.location.reload();
             console.log(res)
         })
     }

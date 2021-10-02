@@ -24,6 +24,7 @@ class Post extends Component {
         e.preventDefault()
         axios.post('http://tanwj.link:8080/api/book', this.state)
         .then(res => {
+            window.location.reload();
             console.log(res)
         })
     }
