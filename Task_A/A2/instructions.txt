@@ -1,0 +1,16 @@
+1. to use local docker without pull, need to set imagePullPolicy: Never and minikube to point to local Docker daemon
+2. need to run eval $(minikube -p minikube docker-env) for every new terminal / docker
+3. Kubernetes not meant to run on local, so require minikube as a bridge. 
+
+need to :
+minikube start --driver=docker ==> create a minikube docker
+eval $(minikube -p minikube docker-env) 
+build image
+kubectl apply -f ./deployment-service.yml ==> create kubernetes services
+kubectl get service
+kubectl get pod
+minikube service webserver-service ==> to link up minikube to nodeport services
+
+
+Ref: 
+https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
