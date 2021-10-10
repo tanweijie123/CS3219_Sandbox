@@ -8,7 +8,7 @@ Repo Link: https://github.com/tanweijie123/CS3219_Sandbox/tree/main/Task_A/A2
 ![dd_enablekube](docs/dd_enablekube.png)  
 1. Next, check that your kubernetes is using the `docker-desktop` environment. You can do this by entering `kubectl config use-context docker-desktop`.  
 ![kube_usedd](docs/kube_usedd.png)  
-1. Build the docker image that you want to use for kubernetes. In this example, I will use the webserver image I used for [Task A1](https://github.com/tanweijie123/CS3219_Sandbox/tree/main/Task_A/A1/webserver). Run `docker build <directory_of_Dockerfile> -t my-static-web`  
+1. Build the docker image that you want to use for kubernetes. In this example, I will be using a simple webserver found in `./webserver/` directory.  Run `docker build ./webserver/ -t my-static-web` to build the docker image, and name it `my-static-web`.    
 ![docker_build](docs/docker_build.png)  
 1. Once the build is complete, execute `kubectl apply -f ./deployment-service.yml` to setup kubernetes configuration. Verify that you have 3 running pods for the `webserver-service` service. You should also note that port 31111 is exposed due to the `deployment-service.yml` configuration.  
 ![kube_yml](docs/kube_yml.png)  
