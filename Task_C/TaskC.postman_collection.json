@@ -6,7 +6,28 @@
 	},
 	"item": [
 		{
-			"name": "Access with no login",
+			"name": "NormalAccess with no login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://tanwj.link:8082/api/general",
+					"protocol": "http",
+					"host": [
+						"tanwj",
+						"link"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"general"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SuperAccess with no login",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -94,7 +115,34 @@
 			"response": []
 		},
 		{
-			"name": "Access with 0-rights",
+			"name": "NormalAccess with normal login [Pass]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTczZTZjYTRiNGMxODZjYzNkYTU3MTciLCJhY2Nlc3MiOjAsInVzZXIiOiJyYW5kb21ndXkiLCJfX3YiOjAsImlhdCI6MTYzNDk4NTcwNiwiZXhwIjoxNjM0OTg5MzA2fQ.6OxTFAPClmkuZynRQzNMmUzDSLM88lDw9DtlHhzbwBA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://tanwj.link:8082/api/general",
+					"protocol": "http",
+					"host": [
+						"tanwj",
+						"link"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"general"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SuperAccess with normal login [Failed]",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -195,7 +243,34 @@
 			"response": []
 		},
 		{
-			"name": "Superuser Access",
+			"name": "NormalAccess with superuser login",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTczZTg3NmMyNjRlNDRjMTRmMmRlODAiLCJhY2Nlc3MiOjEwLCJ1c2VyIjoic3VwZXJ1c2VyIiwiX192IjowLCJpYXQiOjE2MzQ5ODYxNjAsImV4cCI6MTYzNDk4OTc2MH0.vyZ499IjYtyV3E48SVWemBuUzPsB0T8-LxYiNjIJu7A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://tanwj.link:8082/api/general",
+					"protocol": "http",
+					"host": [
+						"tanwj",
+						"link"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"general"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SuperAccess with Super login",
 			"request": {
 				"method": "GET",
 				"header": [
