@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "56e4584c-3db6-4829-8716-7e33065ca367",
+		"_postman_id": "a89c715d-2b8f-4796-b97f-b42f9160bb77",
 		"name": "TaskC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,12 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/book",
+					"raw": "http://tanwj.link:8082/api/book",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"book"
@@ -46,12 +47,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/signup",
+					"raw": "http://tanwj.link:8082/api/signup",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"signup"
@@ -76,12 +78,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/login",
+					"raw": "http://tanwj.link:8082/api/login",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"login"
@@ -102,12 +105,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/book",
+					"raw": "http://tanwj.link:8082/api/book",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"book"
@@ -137,12 +141,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/signup",
+					"raw": "http://tanwj.link:8082/api/signup",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"signup"
@@ -174,12 +179,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/login",
+					"raw": "http://tanwj.link:8082/api/login",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"login"
@@ -200,12 +206,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/book",
+					"raw": "http://tanwj.link:8082/api/book",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"tanwj",
+						"link"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"api",
 						"book"
