@@ -36,7 +36,7 @@ exports.login = function (req, res) {
         } else {
             console.log("Login success - " + found.user + "; Access-level - " + found.access);
 
-            const new_token = generateToken(found); 
+            const new_token = generateToken(found);
 
             res.status(201).json({
                 status: "success",
@@ -63,6 +63,20 @@ exports.signup = function (req, res) {
             });
         }
     });
+};
+
+exports.welcome = function (req, res) {
+    res.status(200).send('Welcome all logged in peeps');
+};
+
+exports.verifyToken = function (req, res, next) {
+    console.log(req.headers);
+    console.log('verifying Token');
+    if (user = verifyToken(req.headers['x-access-token'])) {
+        return next();
+    }
+    console.log('verifyToken fail');
+    return res.status(401).send('Not authenticated!');
 };
 
 exports.verifyAccess = function (req, res, next) {

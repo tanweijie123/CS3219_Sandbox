@@ -12,12 +12,16 @@ var pwController = require('./pwController');
 var middleware = require('./middleware');
 
 //Verify token
+router.use('/general', middleware.verifyToken);
 router.use('/book', middleware.verifyAccess);
 
 router.route('/signup')
     .post(middleware.signup);
 router.route('/login')
     .post(middleware.login); 
+
+router.route('/general')
+    .get(middleware.welcome); 
 
 // Contact routes
 router.route('/book')

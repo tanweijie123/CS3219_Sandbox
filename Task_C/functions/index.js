@@ -24,13 +24,13 @@ else
 app.use(cors({ origin: true})); 
 
 app.get('/', (req, res) => {
-    res.status(200).send('Index - Using Server Port 8080'); 
+    res.status(200).send('Index - Using Server Port 8082'); 
 }); 
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8082;
 var server = app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
