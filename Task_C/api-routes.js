@@ -12,7 +12,7 @@ var pwController = require('./pwController');
 var middleware = require('./middleware');
 
 //Verify token
-router.use('/book', middleware.verifyToken);
+router.use('/book', middleware.verifyAccess);
 
 router.route('/signup')
     .post(middleware.signup);

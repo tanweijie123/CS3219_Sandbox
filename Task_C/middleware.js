@@ -25,16 +25,6 @@ function verifyToken(token) {
     }
 }
 
-exports.verifyToken = function (req, res, next) {
-    console.log(req.headers);
-    console.log('verifying');
-    if (verifyToken(req.headers['x-access-token'])) {
-        return next();
-    }
-    console.log('verify fail');
-    return res.status(401).send('Not authenticated!');
-};
-
 exports.login = function (req, res) {
     console.log(req.body.user);
     User.findOne({ "user": req.body.user }, function (err, found) {
@@ -73,4 +63,19 @@ exports.signup = function (req, res) {
             });
         }
     });
+};
+
+exports.verifyAccess = function (req, res, next) {
+    console.log(req.headers);
+    console.log('verifyingAccess');
+    if (user = verifyToken(req.headers['x-access-token'])) {
+        console.log(user.access);
+        if (user.access > 0) {
+            return next();
+        } else {
+            return res.status(403).send('Insufficient Access Rights');
+        }
+    }
+    console.log('verifyAccess fail');
+    return res.status(401).send('Not authenticated!');
 };
